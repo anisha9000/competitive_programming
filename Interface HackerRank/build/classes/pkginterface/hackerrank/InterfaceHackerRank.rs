@@ -1,0 +1,3 @@
+pkginterface.hackerrank.AdvancedArithmetic
+pkginterface.hackerrank.InterfaceHackerRank
+pkginterface.hackerrank.Calculator
