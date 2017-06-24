@@ -42,9 +42,6 @@ public class MissingNumbers {
             }
         }
         
-        System.out.println("mapA:"+mapA);
-        System.out.println("mapB:"+mapB);
-        
         TreeSet<Integer> missingNumber = new TreeSet();
         for(int key : mapB.keySet()) {
             if(!mapA.containsKey(key) || mapA.get(key) < mapB.get(key)) {
