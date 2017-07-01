@@ -32,7 +32,5 @@ public class AlgorithmicCrush {
         System.out.println(maxValue);
         in.close();
         
-        LinkedList x = new LinkedList();
-        x.
     }
 }
