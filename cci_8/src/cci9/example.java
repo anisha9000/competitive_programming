@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cci_8;
+package cci9;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author anisha
  */
-public class Cci_1 {
+public class example {
 
     /**
      * @param args the command line arguments

@@ -18,7 +18,7 @@ public class SherlockAndSquares {
         for(int i=0;i<t;i++) {
             int a = in.nextInt();
             int b = in.nextInt();
-            System.out.println((int)Math.sqrt(b)- (int)Math.sqrt(a));
+            System.out.println((int)Math.floor(Math.sqrt(b))- (int)Math.ceil(Math.sqrt(a))+1);
             
         }
     }
