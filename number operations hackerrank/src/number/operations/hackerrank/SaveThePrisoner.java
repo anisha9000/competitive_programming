@@ -19,8 +19,18 @@ public class SaveThePrisoner {
             int m = in.nextInt();
             int s = in.nextInt();
             
-            
+            int result = saveThePrisoner(n, m, s);
+            System.out.println(result);
+        
         }
         in.close();
     }
+    
+    static int saveThePrisoner(int n, int m, int s){
+        // Complete this function
+        if((m+s-1)%n == 0) {
+            return n;
+        }
+        return ((m+s-1)%n);
+    }   
 }
