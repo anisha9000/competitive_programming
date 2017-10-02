@@ -6,6 +6,9 @@
 package string.hackerrank;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -13,29 +16,32 @@ import java.util.Scanner;
  * @author anisha
  */
 public class Gemstones {
+
+    static int gemstones(String[] arr) {
+        // Complete this function
+        HashSet<Character> gemSet = new HashSet<Character>();
+        for (char c : arr[0].toCharArray()) {
+            gemSet.add(c);
+        }
+        for (int i = 1; i < arr.length; i++) {
+            HashSet<Character> newSet = new HashSet<Character>();
+            for (char c : arr[i].toCharArray()) {
+                newSet.add(c);
+            }
+            gemSet.retainAll(newSet);
+        }
+
+        return gemSet.size();
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int charCount[] = new int[26];
-        for(int i=0;i<n;i++) {
-            String s = in.next();
-            s = s.toLowerCase();
-            char[] sArray = s.toCharArray();
-            Arrays.sort(sArray);
-            charCount[sArray[0]-97]++;
-            for(int j=1;j<sArray.length;j++) {
-                if(sArray[j] != sArray[j-1]) {
-                    charCount[sArray[j]-97]++;
-                }
-            }
+        String[] arr = new String[n];
+        for (int arr_i = 0; arr_i < n; arr_i++) {
+            arr[arr_i] = in.next();
         }
-        int gemCount = 0;
-        for(int i=0;i<n;i++) {
-            if(charCount[i] == n) {
-                gemCount++;
-            }
-        } 
-        System.out.println(gemCount);
-        in.close();
+        int result = gemstones(arr);
+        System.out.println(result);
     }
 }
