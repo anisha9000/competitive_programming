@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package numberoperations;
+package number.operations.hackerrank;
 
 import java.text.NumberFormat;
 import java.util.Locale;

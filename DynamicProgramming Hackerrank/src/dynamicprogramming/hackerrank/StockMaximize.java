@@ -47,7 +47,7 @@ public class StockMaximize {
                     boughtValue += arr[i];
                 }
             }
-            int profit = soldValue - boughtValue;
+            int profit = (int) (soldValue - boughtValue);
             System.out.println((profit>0)?profit:0);
         }
         in.close();
