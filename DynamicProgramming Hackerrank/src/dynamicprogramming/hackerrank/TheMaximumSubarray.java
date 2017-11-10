@@ -28,14 +28,18 @@ public class TheMaximumSubarray {
 
     private static void getMaxArrayAndSeq(int[] a) {
         int n = a.length;
-        int maxArray[] = new int[n+1];
-        int maxSeq[] = new int[n+1];
-        for(int j=1;j<=n;j++) {
-            maxArray[j] = Math.max(maxArray[j-1]+ a[j-1], a[j-1]);
-            maxSeq[j] = Math.max(maxSeq[j-1], maxSeq[j-1]+a[j-1]);
+        int maxArray[] = new int[n];
+        int maxSeq[] = new int[n];
+        
+        maxArray[0] = a[0];
+        maxSeq[0] = a[0];
+        
+        for(int j=1;j<n;j++) {
+            maxArray[j] = Math.max(maxArray[j-1]+ a[j], a[j]);
+            maxSeq[j] = Math.max(maxSeq[j-1]+a[j],maxSeq[j-1]);
         }
-        int maxArraySum = maxArray[0];
-        int maxSeqSum = maxSeq[0];
+        int maxArraySum = Integer.MIN_VALUE;
+        int maxSeqSum = Integer.MIN_VALUE;
         for(int i=1;i<=n;i++) {
             if(maxArraySum<maxArray[i]) {
                 maxArraySum = maxArray[i];
