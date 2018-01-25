@@ -28,7 +28,7 @@ public class SherlockAndTheBeast {
                 }
             }
             StringBuilder num = new StringBuilder();
-            num.inser
+            //num.inser
             if (x > 0) {
                 num = num.append('5');
                 for (int j = 0; j < x - 1; j++) {
