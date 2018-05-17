@@ -1,3 +1,5 @@
+package trees;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +7,8 @@
  */
 
 
+import trees.NodeEvenTree;
+import trees.BinarySearchTree;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,7 +28,7 @@ public class TopView {
 
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
-        Node root = null;
+        NodeEvenTree root = null;
         root = tree.Insert(root, 5);
         root = tree.Insert(root, 3);
         root = tree.Insert(root, 4);
@@ -38,7 +42,7 @@ public class TopView {
 
     }
 
-    static void top_view(Node root) {
+    static void top_view(NodeEvenTree root) {
         if(root == null) {
             return;
         }
@@ -66,10 +70,10 @@ public class TopView {
 
     static class TopViewNode implements Comparable<TopViewNode>{
 
-        Node n;
+        NodeEvenTree n;
         int displacement;
 
-        public TopViewNode(Node node, int d) {
+        public TopViewNode(NodeEvenTree node, int d) {
             n = node;
             displacement = d;
         }

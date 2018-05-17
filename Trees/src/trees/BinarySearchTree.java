@@ -1,3 +1,5 @@
+package trees;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,7 +22,7 @@ public class BinarySearchTree {
         // TODO code application logic here
         Scanner in = new Scanner(System.in);
         BinarySearchTree tree = new BinarySearchTree();
-        Node root = tree.Insert(null, 4);
+        NodeEvenTree root = tree.Insert(null, 4);
         tree.Insert(root, 2);
         tree.Insert(root, 1);
         tree.Insert(root, 3);
@@ -31,15 +33,15 @@ public class BinarySearchTree {
 
     }
 
-    public static void LevelOrder(Node root)
+    public static void LevelOrder(NodeEvenTree root)
     {
        if(root ==null) {
            return;
        }
-      LinkedList<Node> queue = new LinkedList<>();
+      LinkedList<NodeEvenTree> queue = new LinkedList<>();
        queue.add(root);
        while(!queue.isEmpty()) {
-           Node item = queue.pollFirst();
+           NodeEvenTree item = queue.pollFirst();
            System.out.print(item.data+" ");
            if(item.left!=null)
            queue.add(item.left);
@@ -49,7 +51,7 @@ public class BinarySearchTree {
       
     }
     
-    public static void InOrder(Node root) {
+    public static void InOrder(NodeEvenTree root) {
         if(root == null) {
             return;
         }
@@ -58,9 +60,9 @@ public class BinarySearchTree {
         InOrder(root.right);
     }
 
-    public Node Insert(Node root, int value) {
+    public NodeEvenTree Insert(NodeEvenTree root, int value) {
         if (root == null) {
-            root = new Node(value);
+            root = new NodeEvenTree(value);
             return root;
         }
 
@@ -78,13 +80,13 @@ public class BinarySearchTree {
 
 }
 
-class Node {
+class NodeEvenTree {
 
     int data;
-    Node left;
-    Node right;
+    NodeEvenTree left;
+    NodeEvenTree right;
     
-    Node(int value) {
+    NodeEvenTree(int value) {
         data = value;
         left = null;
         right = null;

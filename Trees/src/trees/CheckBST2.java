@@ -1,3 +1,5 @@
+package trees;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,11 +16,11 @@ import java.util.Set;
  */
 public class CheckBST2 {
     public static void main(String[] args) {
-        Node root = new Node(18);
-        root.left = new Node(8);
-        root.right = new Node(20);
-        root.right.left = new Node(20);
-        root.right.right = new Node(30);
+        NodeEvenTree root = new NodeEvenTree(18);
+        root.left = new NodeEvenTree(8);
+        root.right = new NodeEvenTree(20);
+        root.right.left = new NodeEvenTree(20);
+        root.right.right = new NodeEvenTree(30);
         
         BinarySearchTree.InOrder(root);
         System.out.println("");
@@ -27,7 +29,7 @@ public class CheckBST2 {
         
     }
     
-    private static boolean checkBST(Node root) {
+    private static boolean checkBST(NodeEvenTree root) {
         if(root == null || (root.left == null && root.right == null)) {
             return true;
         }
@@ -37,7 +39,7 @@ public class CheckBST2 {
                 checkBST(root.right);
     }
 
-    private static boolean checkRightSubTree(int data, Node right) {
+    private static boolean checkRightSubTree(int data, NodeEvenTree right) {
         if(right == null) {
             return true;
         }
@@ -46,7 +48,7 @@ public class CheckBST2 {
         return (data<right.data) && lt && rt;
     }
     
-    private static boolean checkLeftSubTree(int data, Node left) {
+    private static boolean checkLeftSubTree(int data, NodeEvenTree left) {
         if(left == null) {
             return true;
         }

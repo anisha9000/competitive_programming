@@ -1,3 +1,5 @@
+package trees;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +7,8 @@
  */
 
 
+import trees.NodeEvenTree;
+import trees.BinarySearchTree;
 import java.util.*;
 
 /**
@@ -17,8 +21,8 @@ public class SwapNodes {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         BinaryTree tree = new BinaryTree();
-        Node root = new Node(1);
-        LinkedList<Node> queue = new LinkedList<>();
+        NodeEvenTree root = new NodeEvenTree(1);
+        LinkedList<NodeEvenTree> queue = new LinkedList<>();
         queue.add(root);
         for (int i = 1; i <= n; i++) {
             queue = tree.insert(i, in.nextInt(), in.nextInt(), queue);
@@ -39,22 +43,22 @@ public class SwapNodes {
 
 class BinaryTree {
 
-    LinkedList<Node> insert(int index, int leftChild, int rightChild,
-            LinkedList<Node> queue) {
+    LinkedList<NodeEvenTree> insert(int index, int leftChild, int rightChild,
+            LinkedList<NodeEvenTree> queue) {
 
         if (queue.get(0).data == index) {
-            Node currNode = queue.poll();
+            NodeEvenTree currNode = queue.poll();
             if (leftChild == -1) {
                 currNode.left = null;
             } else {
-                currNode.left = new Node(leftChild);
+                currNode.left = new NodeEvenTree(leftChild);
                 queue.add(currNode.left);
 
             }
             if (rightChild == -1) {
                 currNode.right = null;
             } else {
-                currNode.right = new Node(rightChild);
+                currNode.right = new NodeEvenTree(rightChild);
                 queue.add(currNode.right);
             }
 
@@ -64,8 +68,8 @@ class BinaryTree {
 
     }
 
-    Node swap(Node root, int depth) {
-        Queue<Node> queue = new LinkedList<>();
+    NodeEvenTree swap(NodeEvenTree root, int depth) {
+        Queue<NodeEvenTree> queue = new LinkedList<>();
         queue.add(root);
         queue.add(null);
         int depthCounter = 1;
@@ -73,7 +77,7 @@ class BinaryTree {
         while (!queue.isEmpty()) {
 
             while ((depthCounter < multipleCounter * depth)) {
-                Node temp = queue.poll();
+                NodeEvenTree temp = queue.poll();
                 if (temp != null) {
                     if (temp.left != null) {
                         queue.add(temp.left);
@@ -96,8 +100,8 @@ class BinaryTree {
 
             while (queue.peek() != null && depthCounter == (multipleCounter * depth)) {
                 //Swap the subtrees
-                Node tree = queue.poll();
-                Node tempNode = tree.left;
+                NodeEvenTree tree = queue.poll();
+                NodeEvenTree tempNode = tree.left;
                 tree.left = tree.right;
                 tree.right = tempNode;
                 if (tree.left != null) {

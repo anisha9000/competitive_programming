@@ -1,3 +1,5 @@
+package trees;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,11 +17,11 @@ import java.util.TreeSet;
  */
 public class CheckBST {
     public static void main(String[] args) {
-        Node root = new Node(18);
-        root.left = new Node(8);
-        root.right = new Node(20);
-        root.right.left = new Node(10);
-        root.right.right = new Node(30);
+        NodeEvenTree root = new NodeEvenTree(18);
+        root.left = new NodeEvenTree(8);
+        root.right = new NodeEvenTree(20);
+        root.right.left = new NodeEvenTree(10);
+        root.right.right = new NodeEvenTree(30);
         
         BinarySearchTree.InOrder(root);
         System.out.println("");
@@ -28,12 +30,12 @@ public class CheckBST {
         
     }
     
-    private static boolean checkBST(Node root) {
+    private static boolean checkBST(NodeEvenTree root) {
         Set<Integer> map = new HashSet<>();
         return checkBST(root, map);
     }
 
-    private static boolean checkBST(Node root, Set<Integer> map) {
+    private static boolean checkBST(NodeEvenTree root, Set<Integer> map) {
         if(root == null) {
             return true;
         }
