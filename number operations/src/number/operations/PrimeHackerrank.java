@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prime.hackerrank;
+package number.operations;
 
 import java.util.*;
 

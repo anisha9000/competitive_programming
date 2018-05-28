@@ -18,13 +18,13 @@ public class EvenTree {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int m = in.nextInt();
-        Node[] nodes = new Node[n+1];
-        nodes[1] = new Node();
+        NodeBST[] nodes = new NodeBST[n+1];
+        nodes[1] = new NodeBST();
         for(int i=0;i<m;i++) {
             int child = in.nextInt();
             if(nodes[child] == null) {
                 int parent = in.nextInt();
-                nodes[child] = new Node();
+                nodes[child] = new NodeBST();
                 nodes[child].updateParent(nodes[parent]);
             }
         }
@@ -43,18 +43,18 @@ public class EvenTree {
     }
 }
 
-class Node {
-    Node parent;
+class NodeBST {
+    NodeBST parent;
     int childCount = 0;
     
-    Node() {
+    NodeBST() {
         parent = null;
         childCount = 0;
     }
     
-    void updateParent(Node parent) {
+    void updateParent(NodeBST parent) {
         this.parent = parent;
-        Node ancestor = parent;
+        NodeBST ancestor = parent;
         while(ancestor != null) {
             ancestor.childCount++;
             ancestor = ancestor.parent;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg10001st.prime.hackerrank;
+package number.operations;
 
 import java.util.*;
 
@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author anisha
  */
-public class PrimeHackerrank {
+public class NPrimeNumbers {
 
     /**
      * @param args the command line arguments
