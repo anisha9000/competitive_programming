@@ -9,7 +9,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -63,6 +65,37 @@ public class MatrixMultiplication {
                         .map(Double::valueOf).toArray(Double[]::new);
 
                 x.add(doubleValues);
+
+            }
+
+            inputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return x;
+
+    }
+    
+    public static List<BigInteger[]> loadBigIntMatrixFromFile(String sourceFile) {
+
+        File file = new File(sourceFile);
+        Scanner inputStream;
+        List<BigInteger[]> x = new ArrayList<>();
+
+        try {
+            inputStream = new Scanner(file);
+            int row = 0;
+            while (inputStream.hasNext()) {
+                String line = inputStream.next();
+                String[] doubleValues = line.split(",");
+                BigInteger[] bigIntVal = new BigInteger[doubleValues.length];
+                int i=0;
+                for(String newValue:doubleValues) {
+                    bigIntVal[i++] = new BigInteger(newValue);
+                }
+
+                x.add(bigIntVal);
 
             }
 
